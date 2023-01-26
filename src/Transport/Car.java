@@ -18,4 +18,18 @@ public class Car extends Transport{
     }
 
 
+    @Override
+    public void pitStop() {
+        System.out.println("Пит-стоп у автомбиля " + getBrand() + getModel());
+    }
+
+    @Override
+    public void bestLapTime() {
+        System.out.println("Лучшее время круга у автомбиля " + getBrand() + getModel());
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("Максимальная скорость у автомбиля " + getBrand() + getModel());
+    }
 }

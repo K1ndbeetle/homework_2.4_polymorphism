@@ -1,6 +1,8 @@
 package Transport;
 
-public abstract class Transport {
+import Interfaces.Competing;
+
+public abstract class Transport implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
