@@ -1,15 +1,18 @@
 package Transport;
 
+import Driver.Driver;
 import Interfaces.Competing;
 
-public abstract class Transport implements Competing {
+public abstract class Transport <T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
+    private T driver;
 
     public Transport(String brand,
                      String model,
-                     double engineVolume) {
+                     double engineVolume,
+                     T driver) {
         if (brand == "" || brand == null || brand == "null") {
             this.brand = "default";
         } else this.brand = brand;
@@ -17,6 +20,15 @@ public abstract class Transport implements Competing {
             this.model = "default";
         } else this.model = model;
         setEngineVolume(engineVolume);
+        setDriver(driver);
+    }
+
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
     }
 
     public String getBrand() {
